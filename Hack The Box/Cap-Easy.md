@@ -11,4 +11,6 @@ Cap is an Easy machine. It has the use of wireshark, basic python, concept of ID
 - In wireshark I found the password and username. Using them did ssh on the user nathan, as it was his data.
 
 ## PrivEsc
-- 
+- In the system, I found ou that it has given SUID to the python3.
+- So I found a command `python3 -c 'import os; os.setuid(0); os.execl("/bin/bash", "bash", "-p")'`. This command will give us root shell.
+- After getting the root access I got the root flag easily.
